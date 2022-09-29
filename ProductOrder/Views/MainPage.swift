@@ -18,7 +18,7 @@ struct MainPage: View {
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $currentTab) {
-                Text("Home")
+                HomeView()
                     .tag(Tab.Home)
 
                 Text("Liked")
@@ -60,6 +60,7 @@ struct MainPage: View {
             .padding([.horizontal, .top])
             .padding(.bottom, 10)
         }
+        .background(Color("HomeBG").ignoresSafeArea())
     }
 }
 

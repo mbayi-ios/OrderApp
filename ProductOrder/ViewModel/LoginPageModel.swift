@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LoginPageModel: ObservableObject {
     //login properties
@@ -18,12 +19,21 @@ class LoginPageModel: ObservableObject {
     @Published var reEnterPassword: String = ""
     @Published var showReEnterPassword: Bool = false
 
+    //log status
+    @AppStorage("log_Status") var log_Status: Bool = false
+
     func login() {
         // Do Action Here
+        withAnimation {
+            log_Status = true
+        }
     }
 
     func register() {
         // Do Action Here
+        withAnimation {
+            log_Status = true
+        }
     }
 
     func forgotPassword() {
