@@ -61,15 +61,15 @@ struct OnboardingPage: View {
     }
 }
 
+extension View {
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
+    }
+}
+
 struct OnboardingPage_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingPage()
     }
 }
 
-
-extension View {
-    func getRect() -> CGRect {
-        return UIScreen.main.bounds
-    }
-}
