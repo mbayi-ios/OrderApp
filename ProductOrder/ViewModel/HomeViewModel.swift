@@ -11,7 +11,9 @@ class HomeViewModel: ObservableObject {
     @Published var productType: ProductType = .Wearable
 
     @Published var products: [Product] = [
-        Product(type: .Wearable, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "AppleWatch"),
+        Product(type: .Wearable, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Watch-1"),
+        Product(type: .Wearable, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Watch-2"),
+        Product(type: .Wearable, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Watch-3"),
         Product(type: .Tablets, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Tablet"),
         Product(type: .Laptops, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Laptop"),
         Product(type: .Phones, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359", productImage: "Phone"),
@@ -23,6 +25,10 @@ class HomeViewModel: ObservableObject {
 
     //More products on the type...
     @Published var showMoreProductsOnType: Bool = false
+
+    //search data
+    @Published var searchText: String = ""
+    @Published var searchActivated: Bool = false
 
     init() {
         filterProductByType()
