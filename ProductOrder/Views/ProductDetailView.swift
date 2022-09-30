@@ -40,7 +40,7 @@ struct ProductDetailView: View {
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio( contentMode: .fit)
-                            .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
+                            .matchedGeometryEffect(id: "\(product.id)\(sharedData.fromSearchPage ? "SEARCH" : "IMAGE")", in: animation)
                             .frame(width: 22, height: 22)
                             .foregroundColor(Color.black.opacity(0.7))
                     }
