@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchView: View {
     var animation: Namespace.ID
-
     @EnvironmentObject var homeData: HomeViewModel
 
     //activating text field with the help of focusState
@@ -21,14 +20,14 @@ struct SearchView: View {
                     withAnimation {
                         homeData.searchActivated = false
                     }
+                    homeData.searchText = ""
                 } label: {
                     Image(systemName: "arrow.left")
                         .font(.title2)
                         .foregroundColor(Color.black.opacity(0.7))
                 }
                 // search bar
-
-                HStack(spacing: 15) {
+                HStack(spacing: 20) {
                     Image(systemName: "magnifyingglass")
                         .font(.title2)
                         .foregroundColor(.gray)
@@ -50,6 +49,49 @@ struct SearchView: View {
             }
             .padding([.horizontal])
             .padding(.top)
+            .padding(.bottom, 10)
+
+            if let products = homeData.searchedProducts {
+                if products.isEmpty {
+
+                    VStack(spacing: 10) {
+                        Image("NotFound")
+                            .resizable()
+                            .aspectRatio( contentMode: .fit)
+                            .padding(.top, 60)
+
+                        Text("Item Not Found")
+                            .font(.custom("Raleway", size: 22).bold())
+
+                        Text("Try a more generic search term or try looking for alternative products")
+                            .font(.custom("Raleway", size: 14))
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 30)
+                    }
+                    .padding()
+
+                } else {
+                    // filter results
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Text("Found \(products.count) results")
+                                .font(.custom("Raleway-Regular", size: 24))
+                                .padding(.vertical)
+                            StaggeredGrid(columns: 2, spacing: 20, list: products) { product in
+                                ProductCardView(product: product)
+                            }
+
+                        }
+                        .padding()
+                    }
+                }
+            } else {
+                ProgressView()
+                    .padding(.top, 30)
+                    .opacity(homeData.searchText == "" ? 0 : 1)
+            }
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(
@@ -61,6 +103,39 @@ struct SearchView: View {
                 startTF = true
             }
         }
+    }
+
+    @ViewBuilder
+    func ProductCardView(product: Product) -> some View {
+        VStack(spacing: 10) {
+            Image(product.productImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+
+
+            Text(product.title)
+                .font(.custom("Raleway-Regular", size: 18))
+                .fontWeight(.semibold)
+                .padding(.top)
+
+            Text(product.subtitle)
+                .font(.custom("Raleway-Regular", size: 14))
+                .foregroundColor(.gray)
+
+            Text(product.price)
+                .font(.custom("Raleway-Regular", size: 16))
+                .foregroundColor(Color.purple)
+                .fontWeight(.bold)
+                .padding(.top,5)
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 22)
+        .background(
+            Color.white
+                .cornerRadius(25)
+        )
+        .padding(.top, 50)
+
     }
 }
 

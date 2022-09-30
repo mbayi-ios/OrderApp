@@ -35,6 +35,7 @@ struct HomeView: View {
                 Text("Order Online\ncollect in store")
                     .font(.custom("Raleway-Bold", size: 28))
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
 
                 // Products Tab
                 ScrollView(.horizontal, showsIndicators: false) {
