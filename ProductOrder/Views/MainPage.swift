@@ -27,7 +27,7 @@ struct MainPage: View {
                 Text("Cart")
                     .tag(Tab.Cart)
 
-                Text("Profile")
+                ProfileView()
                     .tag(Tab.Profile)
 
             }
