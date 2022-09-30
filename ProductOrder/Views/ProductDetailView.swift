@@ -16,6 +16,9 @@ struct ProductDetailView: View {
 
     //shared Data Model
     @EnvironmentObject var sharedData: SharedDataModel
+
+    @EnvironmentObject var homeData: HomeViewModel
+
     var body: some View {
         VStack {
             // title bar and product image
@@ -34,7 +37,7 @@ struct ProductDetailView: View {
                     Spacer()
 
                     Button {
-
+                        addToLiked()
                     } label: {
                         Image("Liked")
                             .renderingMode(.template)
@@ -42,7 +45,7 @@ struct ProductDetailView: View {
                             .aspectRatio( contentMode: .fit)
                             .matchedGeometryEffect(id: "\(product.id)\(sharedData.fromSearchPage ? "SEARCH" : "IMAGE")", in: animation)
                             .frame(width: 22, height: 22)
-                            .foregroundColor(Color.black.opacity(0.7))
+                            .foregroundColor(isLiked() ? Color.red : Color.black.opacity(0.7))
                     }
 
 
@@ -105,9 +108,9 @@ struct ProductDetailView: View {
 
                     // Add button
                     Button {
-
+                        addToCart()
                     } label: {
-                        Text("Add to basket")
+                        Text("\(isAddedToCart() ? "added" : "add") to basket")
                             .font(.custom("Raleway-Bold", size: 20))
                             .foregroundColor(.white)
                             .padding(.vertical, 20)
@@ -134,8 +137,41 @@ struct ProductDetailView: View {
             )
             .zIndex(0)
         }
+        .animation(.easeInOut, value: sharedData.likedProducts)
+        .animation(.easeInOut, value: sharedData.cartProducts)
         .background(Color("HomeBG").ignoresSafeArea())
+    }
 
+    func isLiked() -> Bool {
+        return sharedData.likedProducts.contains{ product in
+            return self.product.id == product.id
+        }
+    }
+
+    func isAddedToCart() -> Bool {
+        return sharedData.cartProducts.contains{ product in
+            return self.product.id == product.id
+        }
+    }
+
+    func addToLiked() {
+        if let index = sharedData.likedProducts.firstIndex(where: { product in
+            return self.product.id == product.id
+        }) {
+            sharedData.likedProducts.remove(at: index)
+        } else {
+            sharedData.likedProducts.append(product)
+        }
+    }
+
+    func addToCart() {
+        if let index = sharedData.cartProducts.firstIndex(where: { product in
+            return self.product.id == product.id
+        }) {
+            sharedData.cartProducts.remove(at: index)
+        } else {
+            sharedData.cartProducts.append(product)
+        }
     }
 }
 

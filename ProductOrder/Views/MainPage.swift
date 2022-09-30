@@ -26,7 +26,8 @@ struct MainPage: View {
                     .environmentObject(sharedData)
                     .tag(Tab.Home)
 
-                Text("Liked")
+                LikedPage()
+                    .environmentObject(sharedData)
                     .tag(Tab.Liked )
 
                 Text("Cart")

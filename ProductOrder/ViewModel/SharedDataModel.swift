@@ -15,5 +15,11 @@ class SharedDataModel: ObservableObject {
 
     //matched Geomtry effect from search page
     @Published var fromSearchPage: Bool = false
+
+    // liked products
+    @Published var likedProducts: [Product] = []
+
+    // basket products
+    @Published var cartProducts: [Product] = []
 }
 
