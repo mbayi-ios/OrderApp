@@ -26,6 +26,8 @@
 		8947010328E5B85A00BE2055 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947010228E5B85A00BE2055 /* LoginPageModel.swift */; };
 		8947010528E5BA2D00BE2055 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947010428E5BA2D00BE2055 /* CustomCorners.swift */; };
 		89FBF31228E6E1A3008A4665 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31128E6E1A3008A4665 /* ProfileView.swift */; };
+		89FBF31428E6EF10008A4665 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31328E6EF10008A4665 /* ProductDetailView.swift */; };
+		89FBF31628E6EFA7008A4665 /* SharedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31528E6EFA7008A4665 /* SharedDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		8947010228E5B85A00BE2055 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		8947010428E5BA2D00BE2055 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 		89FBF31128E6E1A3008A4665 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		89FBF31328E6EF10008A4665 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		89FBF31528E6EFA7008A4665 /* SharedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 				8946DE6828E62B3B00FECD82 /* MoreProductsView.swift */,
 				8946DE6A28E63A8E00FECD82 /* SearchView.swift */,
 				8946DE6C28E640AC00FECD82 /* StaggeredGrid.swift */,
+				89FBF31328E6EF10008A4665 /* ProductDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			children = (
 				8947010228E5B85A00BE2055 /* LoginPageModel.swift */,
 				8946DE6628E61E4400FECD82 /* HomeViewModel.swift */,
+				89FBF31528E6EFA7008A4665 /* SharedDataModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			files = (
 				8947010028E5B82100BE2055 /* LoginPage.swift in Sources */,
 				8946DE6928E62B3B00FECD82 /* MoreProductsView.swift in Sources */,
+				89FBF31628E6EFA7008A4665 /* SharedDataModel.swift in Sources */,
 				8947010528E5BA2D00BE2055 /* CustomCorners.swift in Sources */,
 				8946DE6D28E640AC00FECD82 /* StaggeredGrid.swift in Sources */,
 				8946DE6528E61B5F00FECD82 /* Product.swift in Sources */,
@@ -238,6 +245,7 @@
 				894700DD28E5AF7D00BE2055 /* ContentView.swift in Sources */,
 				894700DB28E5AF7D00BE2055 /* ProductOrderApp.swift in Sources */,
 				8946DE6228E618CA00FECD82 /* HomeView.swift in Sources */,
+				89FBF31428E6EF10008A4665 /* ProductDetailView.swift in Sources */,
 				8946DE5F28E5DE6E00FECD82 /* MainPage.swift in Sources */,
 				89FBF31228E6E1A3008A4665 /* ProfileView.swift in Sources */,
 				894700FE28E5B38400BE2055 /* OnboardingPage.swift in Sources */,

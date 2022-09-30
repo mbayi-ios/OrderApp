@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Namespace var animation
+    var animation: Namespace.ID
+
+    @EnvironmentObject var sharedData: SharedDataModel
 
     @StateObject var homeData: HomeViewModel = HomeViewModel()
 
@@ -127,12 +129,22 @@ struct HomeView: View {
     @ViewBuilder
     func ProductCardView(product: Product) -> some View {
         VStack(spacing: 10) {
-            Image(product.productImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: getRect().width / 2.5, height:  getRect().width / 2.5)
+            ZStack {
+                if sharedData.showDetailProduct {
+                    Image(product.productImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .opacity(0)
+                } else {
+                    Image(product.productImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
+                }
+            }
 
-            //moving image offset
+                .frame(width: getRect().width / 2.5, height:  getRect().width / 2.5)
+                //moving image offset
                 .offset(y: -80)
                 .padding(.bottom, -80)
 
@@ -157,6 +169,13 @@ struct HomeView: View {
             Color.white
                 .cornerRadius(25)
         )
+        // showing prouct detail when tapped...
+        .onTapGesture {
+            withAnimation(.easeInOut) {
+                sharedData.detailProduct = product
+                sharedData.showDetailProduct = true
+            }
+        }
 
     }
 
@@ -198,6 +217,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        MainPage()
     }
 }
