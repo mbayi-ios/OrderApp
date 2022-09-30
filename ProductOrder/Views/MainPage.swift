@@ -12,7 +12,7 @@ struct MainPage: View {
 
     @StateObject var sharedData: SharedDataModel = SharedDataModel()
 
-     @Namespace var animation
+    @Namespace var animation
 
     // hide tabbar
     init() {
@@ -30,7 +30,8 @@ struct MainPage: View {
                     .environmentObject(sharedData)
                     .tag(Tab.Liked )
 
-                Text("Cart")
+                CartPage()
+                    .environmentObject(sharedData)
                     .tag(Tab.Cart)
 
                 ProfileView()

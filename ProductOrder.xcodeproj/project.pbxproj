@@ -29,6 +29,7 @@
 		89FBF31428E6EF10008A4665 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31328E6EF10008A4665 /* ProductDetailView.swift */; };
 		89FBF31628E6EFA7008A4665 /* SharedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31528E6EFA7008A4665 /* SharedDataModel.swift */; };
 		89FBF31828E704DC008A4665 /* LikedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31728E704DC008A4665 /* LikedPage.swift */; };
+		89FBF31A28E71095008A4665 /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBF31928E71095008A4665 /* CartPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		89FBF31328E6EF10008A4665 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		89FBF31528E6EFA7008A4665 /* SharedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataModel.swift; sourceTree = "<group>"; };
 		89FBF31728E704DC008A4665 /* LikedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPage.swift; sourceTree = "<group>"; };
+		89FBF31928E71095008A4665 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8946DE6128E618CA00FECD82 /* HomeView.swift */,
 				89FBF31128E6E1A3008A4665 /* ProfileView.swift */,
 				89FBF31728E704DC008A4665 /* LikedPage.swift */,
+				89FBF31928E71095008A4665 /* CartPage.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				8946DE6728E61E4400FECD82 /* HomeViewModel.swift in Sources */,
 				8947010328E5B85A00BE2055 /* LoginPageModel.swift in Sources */,
 				89FBF31828E704DC008A4665 /* LikedPage.swift in Sources */,
+				89FBF31A28E71095008A4665 /* CartPage.swift in Sources */,
 				894700DD28E5AF7D00BE2055 /* ContentView.swift in Sources */,
 				894700DB28E5AF7D00BE2055 /* ProductOrderApp.swift in Sources */,
 				8946DE6228E618CA00FECD82 /* HomeView.swift in Sources */,
